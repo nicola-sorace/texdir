@@ -1,0 +1,42 @@
+% Uses Koma script document class
+\documentclass[a4paper, titlepage, numbers=noenddot]{scrreprt}
+\usepackage[UKenglish]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\KOMAoptions{fontsize=11pt}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+  \centering
+  {\huge Title Page}
+\end{titlepage}
+
+\tableofcontents{}
+
+
+\chapter{Introduction}
+\section{Abstract}
+\pagenumbering{arabic}
+\paragraph{}
+Insert content here and don't forget to reference~\cite{Sorace 2020}.
+
+\printbibliography[title={References}]
+
+\addcontentsline{toc}{chapter}{References}
+
+\chapter*{Appendices}
+\addcontentsline{toc}{chapter}{Appendices}
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+
+\section{First Appendix}
+
+\end{document}
